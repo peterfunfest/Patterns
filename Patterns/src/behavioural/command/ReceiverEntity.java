@@ -3,15 +3,15 @@ package behavioural.command;
 public class ReceiverEntity {
 	
 	public void create() {
-		System.out.println("I have been created.");
+		System.out.println("The entity has been created.");
 	}
 
 	public void update() {
-		System.out.println("I have been updated.");
+		System.out.println("The entity has been updated.");
 	}
 
 	public void delete() {
-		System.out.println("I have been deleted.");
+		System.out.println("The entity has been deleted.");
 	}
 
 }

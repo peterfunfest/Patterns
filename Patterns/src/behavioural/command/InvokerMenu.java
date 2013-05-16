@@ -3,7 +3,7 @@ package behavioural.command;
 import java.util.Scanner;
 
 public class InvokerMenu {
-	
+
 	private Command option1;
 	private Command option2;
 	private Command option3;
@@ -32,10 +32,10 @@ public class InvokerMenu {
 		this.option3 = option3;
 	}
 
-	private Scanner input=new Scanner(System.in);
+	private Scanner input = new Scanner(System.in);
 
 	private void showMenu() {
-		
+
 		System.out.println("\n\n\nFor God's sake man, DO SOMETHING!\n\n");
 
 		System.out.println("1. Created.");
@@ -49,12 +49,12 @@ public class InvokerMenu {
 	public void acceptOption() {
 
 		String choice = "";
-		
+
 		while (!choice.equals("0")) {
-			
+
 			showMenu();
 			choice = input.next();
-			
+
 			switch (choice) {
 			case "1":
 				option1.execute();
@@ -67,27 +67,28 @@ public class InvokerMenu {
 				break;
 			case "0":
 				System.out.println("\n\n\nSo long, and thanks for all the fish.\n\n");
+				break;
 			default:
-				System.out.println("\n\n\nWHAT ON EARTH ARE YOU DOING?\n\n");
-					
+				System.out.println("\n\n\nWhat on earth are you doing?\n\n");
+				break;
 			}
+
 		}
-		
+
 	}
 
 	public static void main(String[] args) {
-		
+
 		ReceiverEntity entity = new ReceiverEntity();
 
 		InvokerMenu myMenu = new InvokerMenu();
-		
+
 		myMenu.setOption1(new CommandCreate(entity));
 		myMenu.setOption2(new CommandUpdate(entity));
 		myMenu.setOption3(new CommandDelete(entity));
-		
+
 		myMenu.acceptOption();
-		
-		
+
 	}
 
 }
